@@ -1,0 +1,44 @@
+﻿@model TelRehber.Models.Bilgiler
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Düzenle</h1>
+
+<h4>Bilgiler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AD" class="control-label"></label>
+                <input asp-for="AD" class="form-control" />
+                <span asp-validation-for="AD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SOYAD" class="control-label"></label>
+                <input asp-for="SOYAD" class="form-control" />
+                <span asp-validation-for="SOYAD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NUMARA" class="control-label"></label>
+                <input asp-for="NUMARA" class="form-control" />
+                <span asp-validation-for="NUMARA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Rehbere Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
